@@ -252,18 +252,20 @@ const VideoDownloaer = () => {
             videoDetails === null ? (<div></div>) :
             (
               <>
-                <div className='w-full md:w-1/3 lg:mt-[3.45rem] border flex flex-col gap-2 items-center py-3 rounded-sm justify-center border-black/30'>
-                  <img className='w-11/12 rounded-md'
-                  src={videoDetails.thumbnails[videoDetails.thumbnails.length - 1].url} alt="Thumbnail" />
-                  <p className='text-md font-medium text-center text-black/75 px-2'>{videoDetails.title}</p>
-                  <p className='text-black/75 text-sm gap-1 flex'><p>Duration:</p> 
-                  <p className={`${Math.floor(videoDetails.lengthSeconds/60) === 0 ? "hidden" : ""}`}>{Math.floor(videoDetails.lengthSeconds/60)} mins</p>
-                  {videoDetails.lengthSeconds%60}s</p>
-                  <p className='text-slate-800/80 text-sm'>
-                    Channel: 
-                    <a className=' ml-1 text-blue-500/80 hover:underline'
-                    href={videoDetails.ownerProfileUrl} target='blank'>{videoDetails.ownerChannelName}</a>
-                  </p>
+                <div className='w-full md:w-1/3 lg:mt-[3.45rem]'>
+                  <div className='flex flex-col gap-2 items-center py-3 justify-center border border-black/30 rounded-sm sticky top-5'>
+                    <img className='w-11/12 rounded-md'
+                    src={videoDetails.thumbnails[videoDetails.thumbnails.length - 1].url} alt="Thumbnail" />
+                    <p className='text-md font-medium text-center text-black/75 px-2'>{videoDetails.title}</p>
+                    <p className='text-black/75 text-sm gap-1 flex'><p>Duration:</p> 
+                    <p className={`${Math.floor(videoDetails.lengthSeconds/60) === 0 ? "hidden" : ""}`}>{Math.floor(videoDetails.lengthSeconds/60)} mins</p>
+                    {videoDetails.lengthSeconds%60}s</p>
+                    <p className='text-slate-800/80 text-sm'>
+                      Channel: 
+                      <a className=' ml-1 text-blue-500/80 hover:underline'
+                      href={videoDetails.ownerProfileUrl} target='blank'>{videoDetails.ownerChannelName}</a>
+                    </p>
+                  </div>
                 </div>
                 <div className='flex flex-col justify-center w-full md:w-2/3 min-h-20'>
                   <p className='w-full my-3 text-2xl font-medium'>
