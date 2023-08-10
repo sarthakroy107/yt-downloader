@@ -137,7 +137,7 @@ const VideoDownloaer = () => {
             const videoURL = URL.createObjectURL(videoBlob);
             const downloadLink = document.createElement('a');
             downloadLink.href = videoURL;
-            const name = 'Konosuba.mp3';
+            const name = videoDetails.title + 'yuten.mp3';
             downloadLink.setAttribute('download', name);
             console.log("Before on change");
             console.log('After on change');
