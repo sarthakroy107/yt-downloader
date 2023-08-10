@@ -55,7 +55,7 @@ const VideoDownloadDetails = ({format, onChange, downloading, videoUrl, onComple
         <p className='w-[30%] px-1 texxt-center'>{format.qualityLabel}</p>
         <p className='w-[30%] px-2'>{type2[0]}</p>
         <div className={`w-[40%] flex justify-center bg-[#9220D3] text-white p-1 rounded-md ${downloading ? "bg-opacity-50" : ""}`} >
-           <button onClick={particularQualityDownload} disabled={downloading}>
+           <button className="w-full h-full flex justify-center items-center" onClick={particularQualityDownload} disabled={downloading}>
             {
               spinner ? (
                 <ProgressBar

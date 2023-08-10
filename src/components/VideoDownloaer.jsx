@@ -231,7 +231,7 @@ const VideoDownloaer = () => {
           flex-col lg:flex-row border border-black/30 gap-2'>
             <input onChange={(e)=>setLink(e.target.value)} value={link}
             className='h-10 p-2 px-3 lg:w-[80%] outline-none rounded-sm lg:text-xl' placeholder='Paste link here...' type="text" />
-            <div onClick={analyzeVideo} className='bg-[#9220D3] lg:w-[15%] mt-3 lg:mt-0 rounded-sm text-center 
+            <button disabled={busy} onClick={analyzeVideo} className='bg-[#9220D3] lg:w-[15%] mt-3 lg:mt-0 rounded-sm text-center 
             p-2 text-white font-medium hover:cursor-pointer'>
               {
                 busy ? (<div className='flex justify-center'> <TailSpin
@@ -244,7 +244,7 @@ const VideoDownloaer = () => {
                   visible={true}
                 /> </div>) : (<p>Analyze link</p>)
               }
-            </div>
+            </button>
           </div>
         </div>
         <div className='w-full flex flex-col md:flex-row lg:gap-9 justify-center mt-7'>
